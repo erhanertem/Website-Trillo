@@ -43,7 +43,7 @@ body {
 .container {
   max-width: 120rem;
   margin: 8rem auto;
-  background-color: var(--color-grey-light-2);
+  background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
 }
@@ -52,6 +52,9 @@ body {
   height: 7rem;
   background-color: var(--color-white);
   border-bottom: var(--color-grey-light-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content {
@@ -65,5 +68,53 @@ body {
 
 .hotel-view {
   background-color: var(--color-white);
+  background-color: orangered;
   flex: 1;
+}
+
+.logo {
+  height: 3.25rem;
+  margin-left: 3rem;
+}
+
+.search {
+  background-color: orangered;
+  flex: 0 0 40%;
+}
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  background-color: var(--color-grey-light-2);
+  padding: 0.7rem 2rem;
+  border-radius: 100rem;
+  width: 90%;
+  transition: all 0.3s;
+}
+.search__input:focus {
+  outline: none;
+  width: 100%;
+  background-color: var(--color-grey-light-3);
+}
+.search__button {
+  border: none;
+  background-color: var(--color-grey-light-2);
+}
+.search__icon {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.user-nav {
+  background-color: greenyellow;
+}
+.user-nav__icon {
+  height: 2.25rem;
+  width: 2.25rem;
+}
+.user-nav__user-photo {
+  height: 3.75rem;
+  width: 3.75rem;
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */

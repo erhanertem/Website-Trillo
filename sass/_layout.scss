@@ -3,22 +3,29 @@
 .container {
 	max-width: 120rem;
 	margin: 8rem auto;
-	background-color: var(--color-grey-light-2);
+	background-color: var(--color-grey-light-1);
 	box-shadow: var(--shadow-dark);
 
 	// temp size during design
 	min-height: 50rem;
 }
 
+// flex container
 .header {
 	height: 7rem;
 	background-color: var(--color-white);
 	border-bottom: var(--color-grey-light-2);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
+// flex container
 .content {
 	display: flex;
 }
+
 .sidebar {
 	background-color: var(--color-grey-dark-1);
 
@@ -28,7 +35,8 @@
 
 .hotel-view {
 	background-color: var(--color-white);
+	background-color: orangered;
 
 	// grow as much as whats left to grow up to
-	flex: 1; //flex:100%
+	flex: 1;
 }

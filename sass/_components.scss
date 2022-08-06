@@ -1,1 +1,66 @@
 // write up CSS for all small components here
+// HEADER -LOGO
+.logo {
+	height: 3.25rem;
+	margin-left: 3rem;
+}
+
+// HEADER -SEARCH BAR
+.search {
+	background-color: orangered;
+	// occupy only 40% of the available space
+	flex: 0 0 40%;
+
+	&__input {
+		//input element do not inherit automatically. Inherit needs to be utilized here
+		font-family: inherit;
+		font-size: inherit;
+		color: inherit;
+		border: none;
+		background-color: var(--color-grey-light-2);
+		padding: 0.7rem 2rem;
+		border-radius: 100rem;
+		width: 90%;
+
+		// smooth transition animation
+		transition: all 0.3s;
+
+		// when the search box is on focus
+		&:focus {
+			outline: none;
+			width: 100%;
+			background-color: var(--color-grey-light-3);
+		}
+	}
+	&__button {
+		border: none;
+		background-color: var(--color-grey-light-2);
+	}
+	&__icon {
+		height: 2.5rem;
+		width: 2.5rem;
+	}
+}
+
+// HEADER -USER NAVIGATION
+.user-nav {
+	background-color: greenyellow;
+
+	&__icon-box {
+	}
+	&__icon {
+		height: 2.25rem;
+		width: 2.25rem;
+	}
+	&__notification {
+	}
+	&__user {
+	}
+	&__user-photo {
+		height: 3.75rem;
+		width: 3.75rem;
+		border-radius: 50%;
+	}
+	&__user-name {
+	}
+}
