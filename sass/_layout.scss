@@ -36,8 +36,10 @@
 
 .hotel-view {
 	background-color: var(--color-white);
-	background-color: orangered;
-
 	// grow as much as whats left to grow up to
 	flex: 1;
+
+	// temp stuff
+	background-color: orangered;
+	height: 80rem;
 }
