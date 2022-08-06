@@ -16,7 +16,58 @@
 	</head>
 	<body>
 		<div class="container">
-			<header class="header">Header part</header>
+			<!-- HEADER SECTION -->
+			<header class="header">
+				<!-- HEADER SUBSECTION LOGO -->
+				<img class="logo" src="img/logo.png" alt="trillo logo" />
+
+				<!-- HEADER SUBSECTION - form -->
+				<form class="search" action="#">
+					<!-- FORM SEARCH FIELD -->
+					<input
+						class="search__input"
+						type="text"
+						placeholder="Search hotels"
+					/>
+					<!-- FORM SEARCH BUTTON -->
+					<button class="search__button">
+						<svg class="search__icon">
+							<!-- We have used here svg icon which is a better replacement for font icons that bring along many problems. SVG icons is a safer, better way of implementing and formatting icons -->
+							<use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+							<!-- xlink:href is how we refer to a specific svg in a svg definition library (sprite.svg)  -->
+						</svg>
+					</button>
+				</form>
+
+				<!-- HEADER SUBSECTION - navigation icons -->
+				<nav class="user-nav">
+					<!-- icon #1 -->
+					<div class="user-nav__icon-box">
+						<svg class="user-nav__icon">
+							<use xlink:href="img/sprite.svg#icon-bookmark"></use>
+						</svg>
+						<span class="user-nav__notification">7</span>
+					</div>
+					<!-- icon #2 -->
+					<div class="user-nav__icon-box">
+						<svg class="user-nav__icon">
+							<use xlink:href="img/sprite.svg#icon-chat"></use>
+						</svg>
+						<span class="user-nav__notification">13</span>
+					</div>
+					<!-- user id picture -->
+					<div class="user-nav__user">
+						<img
+							class="user-nav__user-photo"
+							src="img/user.jpg"
+							alt="user photo"
+						/>
+					</div>
+					<span class="user-nav__user-name">Erhan</span>
+				</nav>
+
+				<!--  -->
+			</header>
 			<div class="content">
 				<nav class="sidebar">Navigation</nav>
 				<main class="hotel-view">Hotel view</main>
