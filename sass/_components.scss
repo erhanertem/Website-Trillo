@@ -7,14 +7,20 @@
 
 // HEADER -SEARCH BAR
 .search {
-	background-color: orangered;
 	// occupy only 40% of the available space
 	flex: 0 0 40%;
+
+	// we make search form a flex container as well
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&__input {
 		//input element do not inherit automatically. Inherit needs to be utilized here
 		font-family: inherit;
-		font-size: inherit;
+		font-size: inherit; //1.4rem
+		//inherits from the nearest parent elements font-size. In this case, we have .header designated with 1.4rem font size otherwise it would go all the way up to inherit 1rem font size from the html element
+		font-weight: inherit;
 		color: inherit;
 		border: none;
 		background-color: var(--color-grey-light-2);
@@ -22,8 +28,11 @@
 		border-radius: 100rem;
 		width: 90%;
 
+		// dargs the search button inside the search input field
+		margin-right: -3.25rem;
+
 		// smooth transition animation
-		transition: all 0.3s;
+		transition: all 0.2s;
 
 		// when the search box is on focus
 		&:focus {
@@ -31,14 +40,34 @@
 			width: 100%;
 			background-color: var(--color-grey-light-3);
 		}
+
+		&::placeholder {
+			font-weight: 100;
+			color: var(--color-grey-light-4);
+		}
 	}
+
+	// when search box clicked it gets darker except the search button. In order to darken the search button as well, we  use sibling selector such as + (the first near sibling selector) or ~ (more generic distant sibling selector)
+	&__input:focus ~ &__button {
+		background-color: var(--color-grey-light-3);
+	}
+
 	&__button {
 		border: none;
 		background-color: var(--color-grey-light-2);
+
+		&:focus {
+			outline: none;
+		}
+		&:active {
+			transform: translate(2px);
+		}
 	}
+
 	&__icon {
-		height: 2.5rem;
-		width: 2.5rem;
+		height: 2rem;
+		width: 2rem;
+		fill: var(--color-grey-dark-3);
 	}
 }
 
