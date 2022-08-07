@@ -327,3 +327,72 @@
 		box-shadow: none;
 	}
 }
+
+// DESCRIPTION SECTION 2ND BLOCK LEFT WING paragraph
+.paragraph:not(:last-of-type) {
+	margin-bottom: 2rem; // paragraph is assigned to p. except the last <p> child in a  multi <p> setup ...
+}
+
+// DESCRIPTION SECTION 2ND BLOCK LEFT WING list
+.list {
+	list-style: none;
+	margin: 3rem 0;
+	padding: 3rem;
+	border-top: var(--borderline);
+	border-bottom: var(--borderline);
+
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item {
+		width: 50%;
+		margin-bottom: 0.7rem;
+
+		// IMPORTANT: either include via HTML which clutters the code ot include directly in CSS here.
+		&::before {
+			content: ""; //always include @ before/after pseudo elements
+			display: inline-block; //turn inline element into a block element
+
+			height: 1rem;
+			width: 1rem;
+			margin-right: 0.7rem;
+
+			// //for older browsers icon loading
+			// background-image: url(../img/chevron-thin-right.svg);
+			// background-size: cover;
+
+			// //newer browsers icon loading
+			background-color: var(--color-primary);
+			-webkit-mask-image: url(../img/chevron-thin-right.svg);
+			mask-image: url(../img/chevron-thin-right.svg);
+			-webkit-mask-size: cover;
+			mask-size: cover; //allows for lower heights
+		}
+	}
+}
+
+// DESCRIPTION SECTION 2ND BLOCK LEFT WING recommend
+.recommend {
+	font-size: 1.3rem;
+	color: var(--color-grey-dark-3);
+
+	display: flex;
+	align-items: center;
+	// justify-content: space-between;
+	// // either this or __count margin-right: auto trick!
+
+	&__count {
+		margin-right: auto;
+	}
+
+	&__photo {
+		height: 4.3rem;
+		width: 4.3rem;
+		border-radius: 50%;
+		border: 0.3rem solid var(--color-white);
+
+		&:not(:last-child) {
+			margin-right: -1.5rem;
+		}
+	}
+}

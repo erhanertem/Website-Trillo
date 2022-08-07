@@ -39,8 +39,8 @@
 	// grow as much as whats left to grow up to
 	flex: 1;
 
-	// temp stuff
-	height: 80rem;
+	// // temp stuff
+	// height: 80rem;
 }
 
 .detail {
@@ -51,6 +51,7 @@
 	border-bottom: var(--borderline);
 
 	&__description {
+		font-size: 1.4rem;
 		background-color: var(--color-white);
 		box-shadow: var(--shadow-light);
 		padding: 3rem;
