@@ -15,7 +15,7 @@
 	font-size: 1.4rem;
 	height: 7rem;
 	background-color: var(--color-white);
-	border-bottom: 1px solid var(--color-grey-light-2);
+	border-bottom: var(--borderline);
 
 	display: flex;
 	justify-content: space-between;
@@ -41,4 +41,25 @@
 
 	// temp stuff
 	height: 80rem;
+}
+
+.detail {
+	display: flex;
+
+	padding: 4.5rem;
+	background-color: var(--color-grey-light-1);
+	border-bottom: var(--borderline);
+
+	&__description {
+		background-color: var(--color-white);
+		box-shadow: var(--shadow-light);
+		padding: 3rem;
+		flex: 0 0 60%; //occupy 60% of the flex space
+		margin-right: 4.5rem;
+	}
+	&__user-reviews {
+		background-color: yellowgreen;
+
+		flex: 1; //occupy the remaining flex space of 40%
+	}
 }
