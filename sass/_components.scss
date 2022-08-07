@@ -212,3 +212,15 @@
 	text-align: center;
 	padding: 2.5rem;
 }
+
+// SUBSECTION: CONTENT HOTEL-VIEW
+
+// HOTEL-VIEW IMG BLOCK
+.gallery {
+	display: flex;
+
+	&__photo {
+		width: 100%; //cover as much as the flexed &__item containers
+		display: block; //img elements should always have display:block applied to avoid little spoaces left around them
+	}
+}

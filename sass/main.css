@@ -70,7 +70,6 @@ body {
 .hotel-view {
   background-color: var(--color-white);
   flex: 1;
-  background-color: orangered;
   height: 80rem;
 }
 
@@ -237,4 +236,12 @@ body {
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+}
+
+.gallery {
+  display: flex;
+}
+.gallery__photo {
+  width: 100%;
+  display: block;
 }/*# sourceMappingURL=main.css.map */
