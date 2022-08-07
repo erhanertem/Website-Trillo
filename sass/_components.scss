@@ -474,3 +474,75 @@
 		color: var(--color-primary);
 	}
 }
+
+// CTA SECTION
+
+.cta {
+	padding: 3.5rem 0;
+	text-align: center;
+
+	&__book-now {
+		font-size: 1.5rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		margin-bottom: 2.5rem;
+	}
+}
+
+.btn {
+	font-size: 1.5rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	border-radius: 100rem;
+	border: none;
+	color: var(--color-white);
+	background-image: linear-gradient(
+		to right,
+		var(--color-primary-light),
+		var(--color-primary-dark)
+	);
+	cursor: pointer;
+
+	position: relative;
+	overflow: hidden; //crops the text overflowing the button
+
+	& > * {
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		transition: all 0.2s;
+	}
+
+	&__visible {
+		padding: 2rem 7.5rem;
+	}
+
+	// Animation story: basically, the invisible text is placed off the button boundary and via animation it will slide on top of the visible text. We used absolute positioning for that and applied overflow hidden to the parent element to make it invisible to the user till the animation shows itself on the button.
+	&__hidden {
+		padding: 2rem 0;
+
+		//initial state of the hidden button text
+		position: absolute;
+		left: 0;
+		top: -100%;
+	}
+
+	&:hover {
+		background-image: linear-gradient(
+			to left,
+			var(--color-primary-light),
+			var(--color-primary-dark)
+		);
+		& .btn__visible {
+			transform: translateY(100%);
+		}
+		& .btn__hidden {
+			top: 0;
+		}
+	}
+
+	&:focus {
+		outline: none;
+		animation: pulsate 1s infinite;
+	}
+}
