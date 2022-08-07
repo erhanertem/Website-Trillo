@@ -46,12 +46,12 @@
 .detail {
 	display: flex;
 
+	font-size: 1.4rem;
 	padding: 4.5rem;
 	background-color: var(--color-grey-light-1);
 	border-bottom: var(--borderline);
 
 	&__description {
-		font-size: 1.4rem;
 		background-color: var(--color-white);
 		box-shadow: var(--shadow-light);
 		padding: 3rem;
@@ -59,8 +59,10 @@
 		margin-right: 4.5rem;
 	}
 	&__user-reviews {
-		background-color: yellowgreen;
-
 		flex: 1; //occupy the remaining flex space of 40%
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 }
