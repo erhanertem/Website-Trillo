@@ -31,6 +31,11 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -50,6 +55,12 @@ body {
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
 }
+@media only screen and (max-width: 75em) {
+  .container {
+    margin: 0;
+    max-width: 100%;
+  }
+}
 
 .header {
   font-size: 1.4rem;
@@ -68,6 +79,9 @@ body {
 .sidebar {
   background-color: var(--color-grey-dark-1);
   flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hotel-view {
@@ -148,7 +162,7 @@ body {
   outline: none;
 }
 .search__button:active {
-  transform: translate(2px);
+  transform: translateY(2px);
 }
 .search__icon {
   height: 2rem;
@@ -157,9 +171,9 @@ body {
 }
 
 .user-nav {
+  align-self: stretch;
   display: flex;
   align-items: center;
-  align-self: stretch;
 }
 .user-nav > * {
   padding: 0 2rem;
@@ -183,7 +197,7 @@ body {
   font-size: 0.8rem;
   height: 1.75rem;
   width: 1.75rem;
-  border-radius: 100rem;
+  border-radius: 50%;
   background-color: var(--color-primary);
   color: #fff;
   position: absolute;
@@ -198,12 +212,6 @@ body {
   width: 3.75rem;
   border-radius: 50%;
   margin-right: 1rem;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .side-nav {
@@ -235,13 +243,11 @@ body {
 .side-nav__item:active::before {
   background-color: var(--color-primary-light);
 }
-.side-nav__link {
+.side-nav__link:link, .side-nav__link:visited {
   display: flex;
   align-items: center;
   position: relative;
   z-index: 10;
-}
-.side-nav__link:link, .side-nav__link:visited {
   color: var(--color-grey-light-1);
   text-decoration: none;
   text-transform: uppercase;
@@ -276,7 +282,7 @@ body {
 }
 .overview__heading {
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 1.5rem 3rem;
@@ -303,15 +309,16 @@ body {
   color: #fff;
   margin-left: 3rem;
   padding: 0 2.25rem;
-  text-align: center;
   align-self: stretch;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .overview__rating-average {
   font-size: 2.25rem;
   font-weight: 300;
+  margin-bottom: -0.3rem;
 }
 .overview__rating-count {
   font-size: 0.8rem;
@@ -381,14 +388,14 @@ body {
 .list {
   list-style: none;
   margin: 3rem 0;
-  padding: 3rem;
+  padding: 3rem 0;
   border-top: var(--borderline);
   border-bottom: var(--borderline);
   display: flex;
   flex-wrap: wrap;
 }
 .list__item {
-  width: 50%;
+  flex: 0 0 50%;
   margin-bottom: 0.7rem;
 }
 .list__item::before {
@@ -420,7 +427,7 @@ body {
   border: 0.3rem solid var(--color-white);
 }
 .recommend__photo:not(:last-child) {
-  margin-right: -1.5rem;
+  margin-right: -2rem;
 }
 
 .review {
@@ -481,7 +488,7 @@ body {
   text-align: center;
 }
 .cta__book-now {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 2.5rem;

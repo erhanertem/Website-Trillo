@@ -8,6 +8,12 @@
 
 	// temp size during design
 	min-height: 50rem;
+
+	@media only screen and (max-width: $bp-largest) {
+		margin: 0;
+		// width: 100%;
+		max-width: 100%;
+	}
 }
 
 // flex container
@@ -32,6 +38,10 @@
 
 	// grow:0 shrink:0 flex-basis:18% (width to cover of whats available for the flex container)
 	flex: 0 0 18%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .hotel-view {
