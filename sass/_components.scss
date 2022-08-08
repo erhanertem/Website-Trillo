@@ -434,6 +434,10 @@
 		margin-right: auto;
 	}
 
+	&__friends {
+		display: flex; //photos do not collaps to a new line
+	}
+
 	&__photo {
 		height: 4.3rem;
 		width: 4.3rem;
@@ -455,6 +459,15 @@
 	margin-bottom: 3.5rem; //spacing between reviews
 	position: relative; //position attribute tht parents ::before pseudo elemnent of "
 	overflow: hidden; //crops off the boundary the overflowing " pseudo element
+
+	// decrease margin between the hotel description wings and the left wing padding
+	@media only screen and (max-width: $bp-medium) {
+		padding: 2rem;
+		margin-bottom: 3rem;
+	}
+	@media only screen and (max-width: $bp-small) {
+		width: 100%;
+	}
 
 	&::before {
 		content: "\201C"; //css glyph code
@@ -516,6 +529,9 @@
 .cta {
 	padding: 3.5rem 0;
 	text-align: center;
+	@media only screen and (max-width: $bp-medium) {
+		padding: 2.5rem 0;
+	}
 
 	&__book-now {
 		font-size: 2rem;

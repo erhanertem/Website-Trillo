@@ -66,12 +66,33 @@
 	background-color: var(--color-grey-light-1);
 	border-bottom: var(--borderline);
 
+	// decrease padding around the hotel description blocks
+	@media only screen and (max-width: $bp-medium) {
+		padding: 3rem;
+	}
+
+	//display all content in vertical order
+	@media only screen and (max-width: $bp-small) {
+		flex-direction: column;
+	}
+
 	&__description {
 		background-color: var(--color-white);
 		box-shadow: var(--shadow-light);
 		padding: 3rem;
 		flex: 0 0 60%; //occupy 60% of the flex space
 		margin-right: 4.5rem;
+
+		// decrease margin between the hotel description wings and the left wing padding
+		@media only screen and (max-width: $bp-medium) {
+			padding: 2rem;
+			margin-right: 3rem;
+		}
+
+		@media only screen and (max-width: $bp-small) {
+			margin-right: 0rem;
+			margin-bottom: 3rem;
+		}
 	}
 	&__user-reviews {
 		flex: 1; //occupy the remaining flex space of 40%
