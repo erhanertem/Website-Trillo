@@ -31,6 +31,11 @@
 // flex container
 .content {
 	display: flex;
+
+	// Relocate the vertical navbar @ side to the top of hotel title bar so we make room for the squezzed hotel info and reviews content
+	@media only screen and (max-width: $bp-medium) {
+		flex-direction: column;
+	}
 }
 
 .sidebar {

@@ -153,11 +153,25 @@
 	list-style: none;
 	margin-top: 3.5rem;
 
+	// @ horizontal top position configuration
+	@media only screen and (max-width: $bp-medium) {
+		display: flex;
+		margin: 0;
+	}
+
 	&__item {
 		position: relative;
 
+		@media only screen and (max-width: $bp-medium) {
+			flex: 1;
+		}
+
 		&:not(:last-child) {
 			margin-bottom: 0.5rem;
+
+			@media only screen and (max-width: $bp-medium) {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -203,6 +217,15 @@
 		// display: block; //for padding to work, display:block needs to be set for inline elements
 		// already applied display:flex above - dismissable
 		padding: 1.5rem 3rem;
+
+		@media only screen and (max-width: $bp-medium) {
+			// option#1
+			// display: block;
+			// text-align: center;
+			// option#2 as parent is a flex element
+			justify-content: center;
+			padding: 2rem;
+		}
 	}
 
 	&__icon {
@@ -218,6 +241,11 @@
 	color: var(--color-grey-light-4);
 	text-align: center;
 	padding: 2.5rem;
+
+	// @ horizontal top position configuration
+	@media only screen and (max-width: $bp-medium) {
+		display: none; //removed
+	}
 }
 
 // SUBSECTION: CONTENT HOTEL-VIEW
