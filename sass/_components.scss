@@ -16,6 +16,13 @@
 	align-items: center;
 	justify-content: center;
 
+	@media only screen and (max-width: $bp-smallest) {
+		order: 1; //move search box to the end
+		flex: 0 0 100%; //cover 100% of the flex width to make sure @ target breakpoint of 512, it allocates the entire space and flex-wraps to below line - works in coalision with the media query @ the header
+
+		background-color: var(--color-grey-light-2);
+	}
+
 	&__input {
 		//input element do not inherit automatically. Inherit needs to be utilized here
 		font-family: inherit;
@@ -286,7 +293,13 @@
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		padding: 1.5rem 3rem;
+
+		@media only screen and (max-width: $bp-small) {
+			font-size: 2rem;
+			padding: 1.25rem 2rem;
+		}
 	}
+
 	&__stars {
 		// flex: 1; //graps the entire available space compared to others
 		margin-right: auto; // IMPORTANT: better than flex as the element is not covering the entire space to rip some space
@@ -325,15 +338,27 @@
 		align-items: center;
 		justify-content: center;
 
+		@media only screen and (max-width: $bp-small) {
+			padding: 0rem 1.5rem;
+		}
+
 		&-average {
 			font-size: 2.25rem;
 			font-weight: 300;
 			margin-bottom: -0.3rem;
+
+			@media only screen and (max-width: $bp-small) {
+				font-size: 1.8rem;
+			}
 		}
 
 		&-count {
 			font-size: 0.8rem;
 			text-transform: uppercase;
+
+			@media only screen and (max-width: $bp-small) {
+				font-size: 0.6rem;
+			}
 		}
 	}
 }
