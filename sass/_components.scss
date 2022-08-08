@@ -9,15 +9,27 @@
 // SUBSECTION: SEARCH BAR
 .search {
 	// occupy only 40% of the available space
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 40%;
 	flex: 0 0 40%;
 
 	// we make search form a flex container as well
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 
 	@media only screen and (max-width: $bp-smallest) {
+		-webkit-box-ordinal-group: 2;
+		-ms-flex-order: 1;
 		order: 1; //move search box to the end
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 100%;
 		flex: 0 0 100%; //cover 100% of the flex width to make sure @ target breakpoint of 512, it allocates the entire space and flex-wraps to below line - works in coalision with the media query @ the header
 
 		background-color: var(--color-grey-light-2);
@@ -40,6 +52,8 @@
 		margin-right: -3.25rem;
 
 		// smooth transition animation
+		-webkit-transition: all 0.2s;
+		-o-transition: all 0.2s;
 		transition: all 0.2s;
 
 		// when the search box is on focus
@@ -84,6 +98,8 @@
 			outline: none;
 		}
 		&:active {
+			-webkit-transform: translateY(2px);
+			-ms-transform: translateY(2px);
 			transform: translateY(2px);
 		}
 	}
@@ -97,10 +113,15 @@
 
 // SUBSECTION: USER NAVIGATION
 .user-nav {
+	-ms-flex-item-align: stretch;
 	align-self: stretch; // we make nav container stretch its sub containers 100%
 
 	// turn navigation container to a flex container
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 
 	// direct children selector all
@@ -109,7 +130,13 @@
 		cursor: pointer;
 		height: 100%;
 
+		display: -webkit-box;
+
+		display: -ms-flexbox;
+
 		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 
 		&:hover {
@@ -139,8 +166,16 @@
 		top: 1.5rem;
 		right: 1.2rem;
 
+		display: -webkit-box;
+
+		display: -ms-flexbox;
+
 		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 	}
 
@@ -162,6 +197,8 @@
 
 	// @ horizontal top position configuration
 	@media only screen and (max-width: $bp-medium) {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		margin: 0;
 	}
@@ -170,6 +207,8 @@
 		position: relative;
 
 		@media only screen and (max-width: $bp-medium) {
+			-webkit-box-flex: 1;
+			-ms-flex: 1;
 			flex: 1;
 		}
 
@@ -190,16 +229,32 @@
 		height: 100%;
 		width: 3px;
 		background-color: var(--color-primary);
+		-webkit-transform: scaleY(0);
+		-ms-transform: scaleY(0);
 		transform: scaleY(0);
+
+		-webkit-transition: width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+			background-color 0.1s, -webkit-transform 0.2s;
+
+		transition: width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s,
+			-webkit-transform 0.2s;
+
+		-o-transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+			background-color 0.1s;
 
 		transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
 			background-color 0.1s;
+
+		transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+			background-color 0.1s, -webkit-transform 0.2s;
 		// transform @ hover state has a .2s transition duration for animation
 		// width @hover state has a .2s transition duration for animation just after completion of previous animation + .4s delay
 	}
 
 	&__item:hover::before,
 	&__item--acive::before {
+		-webkit-transform: scaleY(1);
+		-ms-transform: scaleY(1);
 		transform: scaleY(1);
 		width: 100%;
 	}
@@ -211,7 +266,11 @@
 	&__link:link,
 	&__link:visited {
 		// aligns svg and span elements
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 
 		// IMPORTANT: z-index only works in combination with position property
@@ -230,10 +289,15 @@
 			// display: block;
 			// text-align: center;
 			// option#2 as parent is a flex element
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
 			justify-content: center;
 			padding: 2rem;
 		}
 		@media only screen and (max-width: $bp-smallest) {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
 			flex-direction: column;
 			padding: 1rem;
 		}
@@ -271,6 +335,8 @@
 
 // TOP IMG BLOCK
 .gallery {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 
 	&__photo {
@@ -282,7 +348,11 @@
 // DESCRIPTION BLOCK
 
 .overview {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 
 	border-bottom: var(--borderline);
@@ -304,6 +374,10 @@
 		// flex: 1; //graps the entire available space compared to others
 		margin-right: auto; // IMPORTANT: better than flex as the element is not covering the entire space to rip some space
 
+		display: -webkit-box;
+
+		display: -ms-flexbox;
+
 		display: flex;
 	}
 
@@ -317,7 +391,13 @@
 	&__location {
 		font-size: 1.2rem;
 
+		display: -webkit-box;
+
+		display: -ms-flexbox;
+
 		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 	}
 
@@ -330,12 +410,22 @@
 		color: #fff;
 		margin-left: 3rem;
 		padding: 0 2.25rem;
+		-ms-flex-item-align: stretch;
 		align-self: stretch; //strecthes the container to parent flex element
 
 		// centerline the ratings info
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		flex-direction: column;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
 		justify-content: center;
 
 		@media only screen and (max-width: $bp-small) {
@@ -371,6 +461,8 @@
 	padding-bottom: 2px;
 	background-color: transparent;
 	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
 	transition: all 0.2s;
 
 	display: inline-block;
@@ -378,6 +470,10 @@
 	& span {
 		// right wing review section btn element initial state
 		margin-left: 0.3rem;
+
+		-webkit-transition: margin-left 0.2s;
+
+		-o-transition: margin-left 0.2s;
 
 		transition: margin-left 0.2s;
 	}
@@ -393,21 +489,49 @@
 
 	&:focus {
 		outline: none;
+		-webkit-animation: pulsate 1s infinite;
 		animation: pulsate 1s infinite;
+	}
+}
+
+@-webkit-keyframes pulsate {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	50% {
+		-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+		-webkit-box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+		box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-box-shadow: none;
+		box-shadow: none;
 	}
 }
 
 @keyframes pulsate {
 	0% {
+		-webkit-transform: scale(1);
 		transform: scale(1);
+		-webkit-box-shadow: none;
 		box-shadow: none;
 	}
 	50% {
+		-webkit-transform: scale(1.05);
 		transform: scale(1.05);
+		-webkit-box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
 		box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
 	}
 	100% {
+		-webkit-transform: scale(1);
 		transform: scale(1);
+		-webkit-box-shadow: none;
 		box-shadow: none;
 	}
 }
@@ -426,11 +550,18 @@
 	border-top: var(--borderline);
 	border-bottom: var(--borderline);
 
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
 	display: flex;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 
 	&__item {
 		// width: 50%;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 50%;
 		flex: 0 0 50%;
 		margin-bottom: 0.7rem;
 
@@ -462,7 +593,13 @@
 	font-size: 1.3rem;
 	color: var(--color-grey-dark-3);
 
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	// justify-content: space-between;
 	// // either this or __count margin-right: auto trick!
@@ -472,6 +609,8 @@
 	}
 
 	&__friends {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex; //photos do not collaps to a new line
 	}
 
@@ -491,6 +630,7 @@
 
 .review {
 	background-color: var(--color-white);
+	-webkit-box-shadow: var(--shadow-light);
 	box-shadow: var(--shadow-light);
 	padding: 3rem;
 	margin-bottom: 3.5rem; //spacing between reviews
@@ -527,7 +667,11 @@
 	}
 
 	&__user {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
 		align-items: center;
 	}
 
@@ -585,6 +729,18 @@
 	border-radius: 100rem;
 	border: none;
 	color: var(--color-white);
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(var(--color-primary-light)),
+		to(var(--color-primary-dark))
+	);
+	background-image: -o-linear-gradient(
+		left,
+		var(--color-primary-light),
+		var(--color-primary-dark)
+	);
 	background-image: linear-gradient(
 		to right,
 		var(--color-primary-light),
@@ -599,6 +755,8 @@
 		display: inline-block;
 		height: 100%;
 		width: 100%;
+		-webkit-transition: all 0.2s;
+		-o-transition: all 0.2s;
 		transition: all 0.2s;
 	}
 
@@ -617,12 +775,26 @@
 	}
 
 	&:hover {
+		background-image: -webkit-gradient(
+			linear,
+			right top,
+			left top,
+			from(var(--color-primary-light)),
+			to(var(--color-primary-dark))
+		);
+		background-image: -o-linear-gradient(
+			right,
+			var(--color-primary-light),
+			var(--color-primary-dark)
+		);
 		background-image: linear-gradient(
 			to left,
 			var(--color-primary-light),
 			var(--color-primary-dark)
 		);
 		& .btn__visible {
+			-webkit-transform: translateY(100%);
+			-ms-transform: translateY(100%);
 			transform: translateY(100%);
 		}
 		& .btn__hidden {
@@ -632,6 +804,7 @@
 
 	&:focus {
 		outline: none;
+		-webkit-animation: pulsate 1s infinite;
 		animation: pulsate 1s infinite;
 	}
 }

@@ -37,11 +37,13 @@ $bp-smallest: 32em; // 32em*16px = 512px
 *::after,
 *:before {
 	// define default pseudo element behaviour
+	-webkit-box-sizing: inherit;
 	box-sizing: inherit;
 }
 
 html {
 	font-size: 62.5%; // 1rem=10px, 10px/16px=62.5%
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 
 	@media only screen and (max-width: $bp-large) {
@@ -56,6 +58,18 @@ body {
 	line-height: 1.6;
 	color: var(--color-grey-dark-2);
 	//define background color
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right bottom,
+		from(var(--color-primary-light)),
+		to(var(--color-primary-dark))
+	);
+	background-image: -o-linear-gradient(
+		left top,
+		var(--color-primary-light),
+		var(--color-primary-dark)
+	);
 	background-image: linear-gradient(
 		to right bottom,
 		var(--color-primary-light),
