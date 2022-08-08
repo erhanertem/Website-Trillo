@@ -302,11 +302,25 @@ body {
     padding: 2rem;
   }
 }
+@media only screen and (max-width: 32em) {
+  .side-nav__link:link, .side-nav__link:visited {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
 .side-nav__icon {
   width: 1.75rem;
   height: 1.75rem;
   fill: currentColor;
   margin-right: 2rem;
+}
+@media only screen and (max-width: 32em) {
+  .side-nav__icon {
+    margin-right: 0rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .legal {
