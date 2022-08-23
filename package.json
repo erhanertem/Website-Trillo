@@ -20,5 +20,15 @@
 		"node-sass": "^7.0.1",
 		"npm-run-all": "^4.1.5",
 		"postcss-cli": "^10.0.0"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/erhanertem/Website-Trillo.git"
+	},
+	"author": "Erhan ERTEM",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/erhanertem/Website-Trillo/issues"
+	},
+	"homepage": "https://github.com/erhanertem/Website-Trillo#readme"
 }
